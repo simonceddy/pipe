@@ -17,9 +17,19 @@ class Hub implements ProcessorInterface
 {
     protected $pipelines = [];
 
+    protected $named_pipelines = [];
+
+    protected $processors = [];
+
+    protected $named_processors = [];
+
     protected $pre_processors = [];
 
     protected $post_processors = [];
+
+    protected $triggers = [];
+
+    protected $named_triggers = [];
 
     public function __construct(array $pipelines = [])
     {
@@ -52,7 +62,7 @@ class Hub implements ProcessorInterface
         string $alias,
         ProcessorInterface $processor
     ) {
-        
+
     }
 
     public function addPipeline(
