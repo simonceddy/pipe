@@ -10,11 +10,13 @@ $payload = new Example\ExamplePayload('Testing');
 
 $pipeline = new Pipeline([
     new Example\ExampleProcessor1,
-    new Example\ExampleProcessor2,
+    //new Example\ExampleProcessor2,
     new Example\ExampleTriggerable
 ]);
 
 $result = $pipeline->process($payload);
+$result = $pipeline($payload);
+$result = call_user_func($pipeline, $payload);
 
 var_dump($result);
 

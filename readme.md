@@ -14,8 +14,15 @@ Alternatively, you can clone this repo and point your autoloader to its __src__ 
 ## Usage
 The idea of a Pipeline is to run a "Payload" object through a series of Processor classes. Each Processor class might handle or update the Payload object in a different way. Once each Processor has run, the updated Payload object is returned.
 
-### Creating a new Pipeline
-Tubular's default Pipeline can be constructed like so:
+### Building a Pipeline
+
+By default, Pipelines must implement the __Eddy\Tubular\PipelineInterface__.
+
+Tubular's Pipeline class provides a simple implementation that is adequate in many cases.
+
+In order for a Pipeline to be useful it requires some Processors. Processors are classes implementing the __Eddy\Tubular\ProcessorInterface__, which defines a single `process()` method. This method must accept and return a Payload object (more on Payloads below - they're important!), but whatever it does to the Payload is up to you.
+
+The default Pipeline can be constructed like so:
 
 ```php
 use Eddy\Tubular\Pipeline;
@@ -85,3 +92,22 @@ class MyCoolPayload implements PayloadInterface
 ```
 
 In the above example our Payload is fairly simple, and only deals with a single string. Your Payload objects can be as basic or as complex as required, provided your Processors can use them.
+
+
+### Processing a Payload
+
+Processing a Payload is done via a Pipeline's `process()` method. An instance of your Payload class is passed to this method, and the processed Payload is returned. By default, the `process()` method will only ever return an instance of __Eddy\Tubular\PayloadInterface__, and will throw an Exception if it cannot.
+
+```php
+// Using the example Payload from the previous section:
+$payload = new MyApp\MyCoolPayload;
+
+// Send our Payload through our Pipeline for processing:
+$result = $pipeline->process($payload);
+```
+
+The default Pipeline contains an `__invoke()` magic method (though it is not defined in the __Eddy\Tubular\PipelineInterface__), and can be used as a function/callable:
+
+
+
+
