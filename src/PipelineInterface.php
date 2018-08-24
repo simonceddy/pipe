@@ -1,6 +1,20 @@
 <?php
 namespace Eddy\Tubular;
 
+/**
+ * The PipelineInterface defines the methods expected in a Pipeline
+ * implementation.
+ * 
+ * This interface extends the ProcessorInterface, which defines the
+ * process() method, allowing Pipelines to be used as Processors within
+ * other Pipelines.
+ * 
+ * @category Pipelines
+ * @package  Tubular
+ * @author   Simon Eddy <simon@simoneddy.com.au>
+ * @license  MIT
+ * @link     http://github.com/simonceddy/tubular
+*/
 interface PipelineInterface extends ProcessorInterface
 {
     /**

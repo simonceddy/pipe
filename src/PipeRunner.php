@@ -1,10 +1,29 @@
 <?php
 namespace Eddy\Tubular;
 
+/**
+ * PipeRunner
+ * 
+ * @category Processing
+ * @package  Tubular
+ * @author   Simon Eddy <simon@simoneddy.com.au>
+ * @license  MIT
+ * @link     http://github.com/simonceddy/tubular
+*/
 class PipeRunner
 {
-    public function run(PayloadInterface $payload, $processors)
-    {
+    /**
+     * Run the passed Payload through the passed processors iterable and
+     * return the resulting Payload;
+     *
+     * @param PayloadInterface $payload
+     * @param array|mixed $processors
+     * @return PayloadInterface
+     */
+    public function run(
+        PayloadInterface $payload,
+        $processors
+    ): PayloadInterface {
         if (!\is_iterable($processors)) {
             throw new \InvalidArgumentException(
                 'Processors must be passed in an iterable form.'
@@ -20,6 +39,7 @@ class PipeRunner
                 $payload = $processor->process($payload);
             }
         }
+
         return $payload;
     }
 }

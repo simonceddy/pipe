@@ -1,6 +1,15 @@
 <?php
 namespace Eddy\Tubular;
 
+/**
+ * The default Pipeline implementation.
+ * 
+ * @category Pipeline
+ * @package  Tubular
+ * @author   Simon Eddy <simon@simoneddy.com.au>
+ * @license  MIT
+ * @link     http://github.com/simonceddy/tubular
+*/
 class Pipeline implements PipelineInterface
 {
     protected $runner;
@@ -14,6 +23,9 @@ class Pipeline implements PipelineInterface
         }
     }
 
+    /**
+     * @inheritDoc
+     */
     public function process(PayloadInterface $payload): PayloadInterface
     {
         if (!isset($this->runner)) {
@@ -41,5 +53,19 @@ class Pipeline implements PipelineInterface
         foreach ($processors as $processor) {
             $this->addProcessor($processor);
         }
+    }
+
+    /**
+     * Allows the Pipeline to be callable. Passes the Payload to the
+     * process() method and returns the result.
+     * 
+     * Identical functionality to the process() method.
+     *
+     * @param PayloadInterface $payload
+     * @return PayloadInterface
+     */
+    public function __invoke(PayloadInterface $payload): PayloadInterface
+    {
+        return $this->process($payload);
     }
 }
