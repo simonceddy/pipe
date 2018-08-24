@@ -40,9 +40,11 @@ class Pipeline implements PipelineInterface
      */
     public function addProcessor(ProcessorInterface $processor, int $pos = null)
     {
+        // TODO: Handle pos is not null
         if (null === $pos || $pos > count($this->processors)) {
             $this->processors[] = $processor;
         }
+        return $this;
     }
 
     /**

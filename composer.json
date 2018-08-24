@@ -21,8 +21,11 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Eddy\\Tubular\\Example\\": "eg" 
+            "Eddy\\Tubular\\Example\\": "examples" 
         }
     },
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "league/commonmark": "^0.17.5"
+    }
 }
