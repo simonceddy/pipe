@@ -1,6 +1,6 @@
 {
-    "name": "simoneddy/tubular",
-    "description": "Modular Pipelines",
+    "name": "simoneddy/pipe",
+    "description": "Basic Pipeline implementation",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -16,12 +16,12 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Eddy\\Tubular\\": "src"
+            "Eddy\\Pipe\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Eddy\\Tubular\\Example\\": "examples" 
+            "Eddy\\Pipe\\Example\\": "examples" 
         }
     },
     "require": {},

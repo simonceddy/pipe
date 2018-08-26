@@ -1,11 +1,11 @@
 <?php
-namespace Eddy\Tubular;
+namespace Eddy\Pipe;
 
 /**
  * PipeRunner
  * 
  * @category Processing
- * @package  Tubular
+ * @package  Pipe
  * @author   Simon Eddy <simon@simoneddy.com.au>
  * @license  MIT
  * @link     http://github.com/simonceddy/tubular
@@ -31,13 +31,7 @@ class PipeRunner
         }
 
         foreach ($processors as $processor) {
-            if ($processor instanceof TriggerableInterface
-                && !$processor->trigger($payload)
-            ) {
-                // bypass
-            } else {
-                $payload = $processor->process($payload);
-            }
+            $payload = $processor->process($payload);
         }
 
         return $payload;

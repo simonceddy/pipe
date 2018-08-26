@@ -1,8 +1,8 @@
 <?php
-namespace Eddy\Tubular\Example;
+namespace Eddy\Pipe\Example;
 
-use Eddy\Tubular\ProcessorInterface;
-use Eddy\Tubular\PayloadInterface;
+use Eddy\Pipe\ProcessorInterface;
+use Eddy\Pipe\PayloadInterface;
 
 class ExampleProcessor1 implements ProcessorInterface
 {

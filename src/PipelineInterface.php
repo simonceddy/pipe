@@ -1,5 +1,5 @@
 <?php
-namespace Eddy\Tubular;
+namespace Eddy\Pipe;
 
 /**
  * The PipelineInterface defines the methods expected in a Pipeline
@@ -10,10 +10,10 @@ namespace Eddy\Tubular;
  * other Pipelines.
  * 
  * @category Pipelines
- * @package  Tubular
+ * @package  Pipe
  * @author   Simon Eddy <simon@simoneddy.com.au>
  * @license  MIT
- * @link     http://github.com/simonceddy/tubular
+ * @link     http://github.com/simonceddy/pipe
 */
 interface PipelineInterface extends ProcessorInterface
 {

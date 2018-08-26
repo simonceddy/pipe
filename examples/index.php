@@ -3,8 +3,8 @@ require dirname(__DIR__).'/vendor/autoload.php';
 
 use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\Environment;
-use Eddy\Tubular\Pipeline;
-use Eddy\Tubular\Example;
+use Eddy\Pipe\Pipeline;
+use Eddy\Pipe\Example;
 
 $payload = new Example\ExamplePayload('Testing');
 

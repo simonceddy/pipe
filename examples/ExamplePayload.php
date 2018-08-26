@@ -1,7 +1,7 @@
 <?php
-namespace Eddy\Tubular\Example;
+namespace Eddy\Pipe\Example;
 
-use Eddy\Tubular\PayloadInterface;
+use Eddy\Pipe\PayloadInterface;
 
 class ExamplePayload implements PayloadInterface
 {

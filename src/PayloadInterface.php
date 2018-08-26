@@ -1,5 +1,5 @@
 <?php
-namespace Eddy\Tubular;
+namespace Eddy\Pipe;
 
 /**
  * This is an empty interface that simply allows an object to be processed
@@ -10,10 +10,10 @@ namespace Eddy\Tubular;
  * with your Processors.
  * 
  * @category Payload
- * @package  Tubular
+ * @package  Pipe
  * @author   Simon Eddy <simon@simoneddy.com.au>
  * @license  MIT
- * @link     http://github.com/simonceddy/tubular
+ * @link     http://github.com/simonceddy/pipe
 */
 interface PayloadInterface
 {

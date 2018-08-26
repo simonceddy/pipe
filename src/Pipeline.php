@@ -1,14 +1,14 @@
 <?php
-namespace Eddy\Tubular;
+namespace Eddy\Pipe;
 
 /**
  * The default Pipeline implementation.
  * 
  * @category Pipeline
- * @package  Tubular
+ * @package  Pipe
  * @author   Simon Eddy <simon@simoneddy.com.au>
  * @license  MIT
- * @link     http://github.com/simonceddy/tubular
+ * @link     http://github.com/simonceddy/pipe
 */
 class Pipeline implements PipelineInterface
 {
