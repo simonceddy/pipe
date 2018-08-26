@@ -10,8 +10,7 @@ $payload = new Example\ExamplePayload('Testing');
 
 $pipeline = new Pipeline([
     new Example\ExampleProcessor1,
-    //new Example\ExampleProcessor2,
-    new Example\ExampleTriggerable
+    new Example\ExampleProcessor2,
 ]);
 
 $result = $pipeline->process($payload);
