@@ -1,7 +1,9 @@
 # Pipe
 #### "Surf's Away"
 
-Pipe is an implementation of the Pipeline Design Pattern that provides a few nifty features on top.
+
+__Docs aren't finished yet! Hang ten!__
+Pipe is a simple implementation of the Pipeline Design Pattern.
 
 ## Installation
 Pipe can be installed with Composer (requires Composer, of course):
