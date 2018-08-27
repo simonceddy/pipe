@@ -4,13 +4,13 @@ require dirname(__DIR__).'/vendor/autoload.php';
 use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\Environment;
 use Eddy\Pipe\Pipeline;
-use Eddy\Pipe\Example;
 
-$payload = new Example\ExamplePayload('Testing');
+$payload = new Eddy\Pipe\Example\ExamplePayload('Testing');
 
 $pipeline = new Pipeline([
-    new Example\ExampleProcessor1,
-    new Example\ExampleProcessor2,
+    new Eddy\Pipe\Example\ExampleProcessor1,
+    new Eddy\Pipe\Example\ExampleProcessor2,
+    new Eddy\Pipe\Example\ExampleProcessor1
 ]);
 
 $result = $pipeline->process($payload);

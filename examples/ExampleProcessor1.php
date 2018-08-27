@@ -8,7 +8,11 @@ class ExampleProcessor1 implements ProcessorInterface
 {
     public function process(PayloadInterface $payload): PayloadInterface
     {
-        $payload->setData('The test worked.');
+        if (null === $payload->getData()) {
+            $payload->setData('some new data.');
+        } else {
+            $payload->setData('The test worked.');
+        }
         return $payload;
     }
 }
